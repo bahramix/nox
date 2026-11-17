@@ -14,5 +14,6 @@ namespace Nox{
         std::string             cpp_version;
 
         bool create_file(const fs::path& path);
+        bool load_file();
     };
 }

@@ -39,6 +39,8 @@ namespace Nox{
 
     Command::Result Command::build(){
         Result result;
+
+        Config config;
         return result;
     }
 
@@ -70,7 +72,7 @@ namespace Nox{
         Log::println("{}compiler version{}-> {}{}",c::bright_cyan, c::yellow, c::bright_blue, config.compiler_version);
 
         config.cpp_version = "23";
-        config.executable_name = "program";
+        config.executable_name = "app";
         config.build_directory = project / "build";
         config.source_directory = project / "src";
 
