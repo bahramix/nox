@@ -44,7 +44,7 @@ namespace Nox{
         config.load_file();
         std::vector<std::string> cpp_files;
 
-        for(const auto& entry : fs::recursive_directory_iterator(config.source_directory)){
+        for(const fs::directory_entry& entry : fs::recursive_directory_iterator(config.source_directory)){
             if(entry.is_regular_file() && entry.path().extension() == ".cpp"){
                 cpp_files.push_back(entry.path().string());
             }
