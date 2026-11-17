@@ -39,8 +39,21 @@ namespace Nox{
 
     Command::Result Command::build(){
         Result result;
-
         Config config;
+
+        config.load_file();
+        std::vector<std::string> cpp_files;
+
+        for(const auto& entry : fs::recursive_directory_iterator(config.source_directory)){
+            if(entry.is_regular_file() && entry.path().extension() == ".cpp"){
+                cpp_files.push_back(entry.path().string());
+            }
+        }
+
+        for(const std::string& file : cpp_files){
+            Log::println("{}", file);
+        }
+
         return result;
     }
 

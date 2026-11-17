@@ -1,7 +1,0 @@
-executable_name = app
-source_directory = src
-build_directory = build
-compiler = gcc
-compiler_version = 13
-
-cpp_version = 23
