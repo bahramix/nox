@@ -6,6 +6,7 @@
 #include <util/log.hpp>
 #include <core/config.hpp>
 #include <platform/process.hpp>
+#include <toml/lexer.hpp>
 
 namespace fs = std::filesystem;
 using c = Nox::Util::Color;
@@ -59,6 +60,8 @@ namespace Nox{
 
     Command::Result Command::run(){
         Result result;
+        nox::toml::lexer lexer;
+        lexer.load_from_file("src/core/command.cpp");
         return result;
     }
 
