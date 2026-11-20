@@ -60,9 +60,36 @@ namespace Nox{
 
     Command::Result Command::run(){
         Result result;
-        nox::toml::lexer lexer;
-        lexer.load_from_file("src/core/command.cpp");
         return result;
+    }
+
+    void Command::test(){
+        nox::toml::lexer lexer;
+        lexer.load_from_file("config.toml");
+
+        for(nox::toml::token tkn : lexer.tokens){
+            if(tkn.type == nox::toml::token_type::Bare){
+                std::cout << "[bare] -> " << tkn.value << "\n";
+            }
+            if(tkn.type == nox::toml::token_type::Invalid){
+                std::cout << "[invalid]\n";
+            }
+            if(tkn.type == nox::toml::token_type::String){
+                std::cout << "[string] -> " << tkn.value << "\n";
+            }
+            if(tkn.type == nox::toml::token_type::LeftBracket){
+                std::cout << "[left bracket]\n";
+            }
+            if(tkn.type == nox::toml::token_type::RightBracket){
+                std::cout << "[right bracket]\n";
+            }
+            if(tkn.type == nox::toml::token_type::NewLine){
+                std::cout << "[new line]\n";
+            }
+            if(tkn.type == nox::toml::token_type::Equals){
+                std::cout << "[equals]\n";
+            }
+        }
     }
 
     bool Command::create_directories(const fs::path& project){

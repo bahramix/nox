@@ -14,6 +14,7 @@ namespace Nox{
         Result create(std::filesystem::path project, std::string type);
         Result build();
         Result run();
+        void test();
 
     private:
         bool create_directories(const std::filesystem::path& project);

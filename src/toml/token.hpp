@@ -3,14 +3,17 @@
 
 namespace nox::toml{
     enum class token_type{
-        ID,
-        EQUALS,
-        STRING,
-        INTEGER,
-        FLOAT,
-        BOOLEAN,
-        LEFT_BRACKET,
-        RIGHT_BRACKET
+        Bare,
+        Equals,
+        String,
+        Integer,
+        Float,
+        Boolean,
+        LeftBracket,
+        RightBracket,
+        NewLine,
+        Invalid,
+        EndOfFile
     };
 
     struct token{

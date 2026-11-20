@@ -40,6 +40,10 @@ int main(int argc, char** argv)
         command.run();
     }
 
+    else if(action == "test"){
+        command.test();
+    }
+
     else if(action == "--version"){
         std::cout << "nox 0.0.1" << std::endl;
     }
